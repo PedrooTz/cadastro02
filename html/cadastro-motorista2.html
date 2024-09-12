@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Motorista</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script type="module" src="../js/cadastro-motorista2.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/cadastro-motorista1.css">
@@ -36,23 +37,19 @@
                 <div class="forms">
                     <form action="">
                         <div class="inputbox">
-                            <input type="text" required>
-                            <label for="numero">Número de telefone:</label>
+                            <input type="text" id="img" required>
+                            <label for="numero">Imagem de perfil:</label>
                         </div>
                         <div class="inputbox">
-                            <input type="text" required>
+                            <input type="text" id="email" required>
                             <label for="email">Email:</label>
                         </div>
                         <div class="inputbox">
-                            <input type="password" required>
+                            <input type="password" id="senha" required>
                             <label for="Senha">Senha:</label>
                         </div>
-                        <div class="inputbox">
-                            <input type="password" required>
-                            <label for="Conf-senha">Confirme sua senha:</label>
-                        </div>
                         <div>
-                            <button id="Continuar"> Continuar
+                            <button id="next"> Continuar
                                 <img src="../css/img/seta-direita 2.png" alt="Descrição da Imagem">
                             </button>
                             <p>Já possui uma conta? <span class="palavra">Login<span> 

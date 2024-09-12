@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Motorista</title>
+    <script type="module" src="../js/cadastro-motorista1.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
@@ -35,23 +36,23 @@
                 <div class="forms">
                     <form action="">
                         <div class="inputbox">
-                            <input type="text" required>
+                            <input type="text" id="nome" required>
                             <label for="nome">Nome Completo:</label>
                         </div>
                         <div class="inputbox">
-                            <input type="datetime" required>
+                            <input type="datetime" id="data" required>
                             <label for="data">Data de Nascimento:</label>
                         </div>
                         <div class="inputbox">
-                            <input type="text" required>
+                            <input type="text" id="cpf" required>
                             <label for="cpf">CPF:</label>
                         </div>
                         <div class="inputbox">
-                            <input type="text" required>
-                            <label for="rg">RG:</label>
+                            <input type="text" id="telefone" required>
+                            <label for="rg">telefone:</label>
                         </div>
                         <div>
-                            <button id="Continuar"> Continuar
+                            <button id="next"> Continuar
                                 <img src="../css/img/seta-direita 2.png" alt="Descrição da Imagem">
                             </button>
                             <p>Já possui uma conta? <span class="palavra">Login<span> 
