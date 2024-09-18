@@ -1,5 +1,4 @@
    // INSERIR motorista
-
    import { postMotorista } from "./funcoes.js";
 
    const cadastromotorista1 = JSON.parse(localStorage.getItem('cadastromotorista1'));
