@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const empresa = document.getElementById('empresa');
 const funcionario = document.getElementById('funcionario');
@@ -21,38 +21,41 @@ const password = document.getElementById('senha');
 const loginButton = document.getElementById('signin');
 
 const validarLogin = async () => {
-    const email = userName.value;
-    const senha = password.value;
+    const email = userName.value.trim();
+    const senha = password.value.trim();
 
     if (email === '' || senha === '') {
         alert('Preencha os campos!');
         return;
     }
 
-    const url = 'http://localhost:8080/v1/transportaweb/usuarios';
+    const url = 'https://crud-03-09.onrender.com/v1/transportaweb/empresas';
 
     try {
         const response = await fetch(url);
 
-        // Verifica se a requisição foi bem-sucedida
         if (!response.ok) {
-            throw new Error('Erro ao buscar os usuários');
+            throw new Error('Erro ao buscar as empresas');
         }
 
         const data = await response.json();
+        console.log('Dados retornados:', data);
 
-        // Acessa o array 'usuarios' do JSON retornado
-        const users = data.usuarios;
+        // Acessando o array de empresas
+        const empresas = data.empresas || []; // Ajustado para acessar empresas
+        console.log('Empresas:', empresas);
 
-        if (!Array.isArray(users)) {
-            throw new Error('Os dados retornados não são um array');
+        if (empresas.length === 0) {
+            alert('Nenhuma empresa encontrada.');
+            return; // Saia da função se não houver empresas
         }
 
         let validaUser = false;
 
-        // Verifica se o email e senha correspondem
-        users.forEach(user => {
-            if (user.email === email && user.senha === senha) {
+        empresas.forEach(empresa => {
+            // Supondo que a empresa tenha um campo 'senha' para validação
+            console.log(`Verificando empresa: ${empresa.nome} com senha: ${empresa.senha}`);
+            if (empresa.email === email && empresa.senha === senha) { // Ajuste conforme necessário
                 validaUser = true;
                 alert('Login efetuado com sucesso!');
                 window.location.href = ''; // Redirecionamento
