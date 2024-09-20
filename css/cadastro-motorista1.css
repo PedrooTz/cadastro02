@@ -82,7 +82,7 @@ body {
     width: 30px; 
     height: 30px; 
     border-radius: 50%; 
-    border: 2px solid #D92727; /* Adiciona a borda vermelha */ 
+    border: 2px solid; /* Adiciona a borda vermelha */ 
     color: #D92727; /* Cor do texto */ 
     background-color: red; /* Fundo transparente */ 
     display: flex; 
