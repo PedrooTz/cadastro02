@@ -29,7 +29,7 @@ export async function postEmpresas(insert) {
 export async function postMotorista(insert) {
     try {
         // Faz a requisição para a API
-        const response = await fetch('http://localhost:8080/v1/transportaweb/insertmotorista', {
+        const response = await fetch('https://crud-03-09.onrender.com/v1/transportaweb/insertmotorista', {
             method: 'POST',
             body: JSON.stringify(insert),
             headers: { 'Content-Type': 'application/json' }

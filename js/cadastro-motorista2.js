@@ -14,18 +14,17 @@ if (cadastromotorista1) {
 
    document.addEventListener('DOMContentLoaded', function() {
     console.log('JavaScript carregado'); // Verifica se o script está carregado
-
-    const img = document.getElementById('img');
+    const cpf = document.getElementById('cpf');
     const email = document.getElementById('email');
     const senha = document.getElementById('senha');
     const button = document.getElementById('next');
 
-    console.log('img:', img); // Verifica se o elemento foi encontrado
+    console.log('cpf:', cpf); // Verifica se o elemento foi encontrado
     console.log('email:', email);
     console.log('senha:', senha);
     console.log('button:', button);
 
-    if (!img || !email || !senha || !button) {
+    if (!cpf || !email || !senha || !button) {
         console.error('Um ou mais elementos não foram encontrados.');
         return;
     }
@@ -33,17 +32,17 @@ if (cadastromotorista1) {
     button.addEventListener('click', async (event) => {
         event.preventDefault();  // Impede o comportamento padrão do formulário
 
-        const imgInput = img.value;
+        const cpfInput = cpf.value;
         const emailInput = email.value;
         const senhaInput = senha.value;
 
         // Validação dos campos
-        if (!imgInput || !senhaInput || !emailInput) {
+        if (!cpfInput || !senhaInput || !emailInput) {
             console.error('Todos os campos são obrigatórios.');
             return;
         }
 
-        cadastromotorista1.img = imgInput,
+        cadastromotorista1.cpf = cpfInput,
         cadastromotorista1.email = emailInput,
         cadastromotorista1.senha = senhaInput
 
@@ -52,13 +51,15 @@ if (cadastromotorista1) {
             // Tenta enviar os dados
             const sucesso = await postMotorista(cadastromotorista1);
             if (sucesso) {
-                console.log('Empresa cadastrada com sucesso!');
-                window.location.href = '../html/cadastro-empresa2.html';
+                alert("Cadastrado efetuado com sucesso!")
+                console.log('Cadastrado efetuado com sucesso!');
+                window.location.href = '';
             } else {
-                console.error('Falha ao cadastrar a empresa. Por favor, tente novamente.');
+                alert("Falha ao cadastrar o motorista. Por favor, tente novamente.")
+                console.error('Falha ao cadastrar o motorista. Por favor, tente novamente.');
             }
         } catch (error) {
-            console.error('Erro ao tentar cadastrar a empresa:', error);
+            console.error('Erro ao tentar cadastrar  o motorista:', error);
         }
     });
 
