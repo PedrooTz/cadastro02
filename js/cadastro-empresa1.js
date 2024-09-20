@@ -4,18 +4,18 @@
     console.log('JavaScript carregado'); // Verifica se o script está carregado
 
     const nome = document.getElementById('nome');
-    const telefone = document.getElementById('telefone');
-    const cnpj = document.getElementById('cnpj');
     const razaoSocial = document.getElementById('razaoSocial');
+    const cep = document.getElementById('cep');
+    const cnpj = document.getElementById('cnpj');
     const button = document.getElementById('next');
 
     console.log('nome:', nome); // Verifica se o elemento foi encontrado
-    console.log('telefone:', telefone);
-    console.log('cnpj:', cnpj);
     console.log('razaoSocial:', razaoSocial);
+    console.log('cep:', cep);
+    console.log('cnpj:', cnpj);
     console.log('button:', button);
 
-    if (!nome || !telefone || !cnpj || !razaoSocial || !button) {
+    if (!nome || !razaoSocial || !cep || !cnpj || !button) {
         console.error('Um ou mais elementos não foram encontrados.');
         return;
     }
@@ -24,21 +24,22 @@
         event.preventDefault();  // Impede o comportamento padrão do formulário
 
         const nomeInput = nome.value;
-        const telefoneInput = telefone.value;
-        const cnpjInput = cnpj.value;
         const razaoInput = razaoSocial.value;
+        const cepInput = cep.value;
+        const cnpjInput = cnpj.value;
 
         // Validação dos campos
-        if (!nomeInput || !telefoneInput || !cnpjInput || !razaoInput) {
+        if (!nomeInput ||  !razaoInput || !cepInput || !cnpjInput) {
             console.error('Todos os campos são obrigatórios.');
             return;
         }
 
         const insert = {
             nome: nomeInput,
-            telefone: telefoneInput,
+            razaoSocial: razaoInput,
+            cep: cepInput,
             cnpj: cnpjInput,
-            razaoSocial: razaoInput
+           
         };
 
         localStorage.setItem('cadastro1', JSON.stringify(insert));

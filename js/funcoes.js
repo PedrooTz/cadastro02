@@ -1,7 +1,7 @@
 export async function postEmpresas(insert) {
     try {
         // Faz a requisição para a API
-        const response = await fetch('http://localhost:8080/v1/transportaweb/insertempresa', {
+        const response = await fetch('https://crud-03-09.onrender.com/v1/transportaweb/insertempresa', {
             method: 'POST',
             body: JSON.stringify(insert),
             headers: { 'Content-Type': 'application/json' }
@@ -17,6 +17,7 @@ export async function postEmpresas(insert) {
             return true; // Sucesso
         } else {
             console.error('Erro da API:', await response.text());  // Mostra a mensagem de erro da API
+            alert(await response.text())
             return false;  // Falha
         }
     } catch (error) {
