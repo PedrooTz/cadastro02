@@ -189,7 +189,6 @@ selection{
     font-weight: 600;
     pointer-events: none;
 }
-
 .inputbox input{
     width: 90vh; /* aumenta o tamanho dos inputs */
     height: 40px;
